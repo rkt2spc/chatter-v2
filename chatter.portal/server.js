@@ -33,3 +33,7 @@ httpServer
     .once('listening', () => {
         logger.info('Server is listening on', serverSettings.PORT);
     });
+
+//========================================================================================================
+// Graceful Shutdown
+process.on('SIGINT', () => httpServer.close((err) => process.exit(err ? 1 : 0)));
