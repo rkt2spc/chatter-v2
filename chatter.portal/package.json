@@ -1,0 +1,27 @@
+{
+  "name": "chatter.portal",
+  "version": "1.0.0",
+  "description": "Chatter web portal that serves static assets",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nmtuan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "fs-extra": "^2.1.2",
+    "js-yaml": "^3.8.2",
+    "lodash": "^4.17.4",
+    "morgan": "^1.8.1",
+    "winston": "^2.3.1"
+  },
+  "jshintConfig": {
+    "esversion": 6,
+    "eqeqeq": true,
+    "undef": true,
+    "nocomma": true,
+    "node": true,
+    "mocha": true
+  }
+}
