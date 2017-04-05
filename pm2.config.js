@@ -29,7 +29,8 @@ module.exports = {
       ],
       ignore_watch: [ 
         path.resolve(__dirname, 'chatter.portal', 'node_modules'),
-        path.resolve(__dirname, 'chatter.portal', 'log')
+        path.resolve(__dirname, 'chatter.portal', 'log'),
+        path.resolve(__dirname, 'chatter.portal', 'public')
       ],
       
       exec_mode: 'cluster',
