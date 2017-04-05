@@ -25,7 +25,7 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 app.use((err, req, res, next) => logger.error(err));
 
 //========================================================================================================
-// Http Server
+// Startup
 var httpServer = http.createServer(app);
 httpServer
     .listen(serverSettings.PORT)
