@@ -36,4 +36,12 @@ httpServer
 
 //========================================================================================================
 // Graceful Shutdown
-process.on('SIGINT', () => httpServer.close((err) => process.exit(err ? 1 : 0)));
+process.on('SIGINT', () => {
+    httpServer.close((sv_err) => {
+        
+        if (sv_err) logger.error('Error closing server:', sv_err);
+        else logger.info('Server closed');
+
+        process.exit(sv_err ? 1 : 0);
+    });
+});
