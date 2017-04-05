@@ -1,5 +1,9 @@
+//========================================================================================================
+// Node Dependencies
 var path = require('path');
 
+//========================================================================================================
+// Exports
 module.exports = {
   /***********************************************************
   * Applications                                             *                 
@@ -8,8 +12,8 @@ module.exports = {
     // chatter-gateway
     //------------------------------------
     {
-      name: 'WEB',
-      script: 'web.js'
+      name: 'chatter.gateway',
+      script: path.resolve(__dirname, 'chatter.gateway', 'server.js'),
     },
     // chatter-portal
     //------------------------------------
@@ -20,8 +24,13 @@ module.exports = {
       env: { NODE_ENV: 'DEVELOPMENT', PORT: 1337 },
       env_production: { NODE_ENV: 'PRODUCTION', PORT: 80 },
 
-      watch: ['chatter.portal'],
-      ignore_watch: ['chatter.portal/node_modules', 'chatter.portal/log'],
+      watch: [ 
+        path.resolve(__dirname, 'chatter.portal') 
+      ],
+      ignore_watch: [ 
+        path.resolve(__dirname, 'chatter.portal', 'node_modules'),
+        path.resolve(__dirname, 'chatter.portal', 'log')
+      ],
       
       exec_mode: 'cluster',
       instance: 0,
